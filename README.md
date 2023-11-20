@@ -2,9 +2,6 @@
 A [Django](https://www.djangoproject.com/) project boilerplate/template with a multitude of state-of-the-art libraries and tools. If pairing Django with React is a possibility for your project or spinoff, this is the best solution available. Save time with tools like:
 - [React](https://facebook.github.io/react/), for building interactive UIs
 - [Poetry](https://python-poetry.org/), for managing the environment and its dependencies
-- [django-js-reverse](https://github.com/vintasoftware/django-js-reverse), for generating URLs on JS
-- [React Bootstrap](https://react-bootstrap.github.io/), for responsive styling
-
 
 Also, includes a Render.com `render.yaml` and a working Django `production.py` settings, enabling easy deployments with ['Deploy to Render' button](https://render.com/docs/deploy-to-render). The `render.yaml` includes the following:
 - PostgreSQL, for DB
@@ -47,23 +44,11 @@ Also, includes a Render.com `render.yaml` and a working Django `production.py` s
 - `django-debreach` for additional protection against BREACH attack
 - `whitenoise` and `brotlipy` for serving static assets
 
-## Share your project!
-Several people have leveraged our boilerplate to start spinoffs or to boost their efforts in the challenging pursuit of securing funding. Starting with a solid foundation allows you to create more resilient products and focus on what really matters: discovering and delivering value to your customers. If you are one of those people, we're eager to help you even more! We can spread the word about your project across our social media platforms, giving you access to a broader audience.
 
-Send us an email at contact@vintasoftware.com telling us a bit more about how our boilerplate helped you boost your project.
-
-
-## Project bootstrap [![main](https://github.com/chocoelho/django-react-boilerplate/actions/workflows/main.yml/badge.svg)](https://github.com/chocoelho/django-react-boilerplate/actions/workflows/main.yml) [![Known Vulnerabilities](https://snyk.io/test/github/vintasoftware/django-react-boilerplate/badge.svg)](https://snyk.io/test/github/vintasoftware/django-react-boilerplate)
+## Project bootstrap
 - [ ] Make sure you have Python 3.11 installed
 - [ ] Install Django with `pip install django`, to have the `django-admin` command available.
-- [ ] Open the command line and go to the directory you want to start your project in.
-- [ ] Start your project using:
-    ```
-    django-admin startproject theprojectname --extension py,yml,json --name Procfile,Dockerfile,docker-compose.yml,README.md,.env.example,.gitignore,Makefile,render.yaml --template=https://github.com/vintasoftware/django-react-boilerplate/archive/boilerplate-release.zip
-    ```
-    Alternatively, you may start the project in the current directory by placing a `.` right after the project name, using the following command:
-    ```
-    django-admin startproject theprojectname . --extension py,yml,json --name Procfile,Dockerfile,docker-compose.yml,README.md,.env.example,.gitignore,Makefile,render.yaml --template=https://github.com/vintasoftware/django-react-boilerplate/archive/boilerplate-release.zip
+
     ```
 In the next steps, always remember to replace theprojectname with your project's name
 - [ ] Above: don't forget the `--extension` and `--name` params!
@@ -225,19 +210,5 @@ After enabling dyno metadata and setting the environment variables, your next Re
 - Run `poetry run pre-commit install` to enable the hook into your git repo. The hook will run automatically for each commit.
 - Run `git commit -m "Your message" -n` to skip the hook if you need.
 
-## Opinionated Settings
-Some settings defaults were decided based on Vinta's experiences. Here's the rationale behind them:
-
 ### `CELERY_ACKS_LATE = True`
 We believe Celery tasks should be idempotent. So for us it's safe to set `CELERY_ACKS_LATE = True` to ensure tasks will be re-queued after a worker failure. Check Celery docs on ["Should I use retry or acks_late?"](https://docs.celeryproject.org/en/latest/faq.html#should-i-use-retry-or-acks-late) for more info.
-
-## Contributing
-
-If you wish to contribute to this project, please first discuss the change you wish to make via an [issue](https://github.com/vintasoftware/django-react-boilerplate/issues).
-
-Check our [contributing guide](https://github.com/vintasoftware/django-react-boilerplate/blob/master/CONTRIBUTING.md) to learn more about our development process and how you can test your changes to the boilerplate.
-
-## Commercial Support
-[![alt text](https://avatars2.githubusercontent.com/u/5529080?s=80&v=4 "Vinta Logo")](https://www.vinta.com.br/)
-
-This project is maintained by [Vinta Software](https://www.vinta.com.br/) and is used in products of Vinta's clients. We are always looking for exciting work! If you need any commercial support, feel free to get in touch: contact@vinta.com.br
